@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #472c15;
+    --secondary-color: #d9b280;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+body{
+    padding: 15px;
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+header h1{
+    font-family: "Playwrite DE Grund", cursive;
+    font-style: italic;
+}
+#newBookBtn{
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+#newBookBtn:hover{
+    background-color: #27ae60;
+    color: var(--text-color);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+
+/* Main section ----------- */
+
+#bookList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 30px;    
+}
+
+.book-card{
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s ease-in-out;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: monospace;
+}
+.book-card:hover{
+    transform: translateY(-8px);
+}
+.book-card h2{
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.book-card button{
+    width: 60%;
+    height: 15%;
+    border-radius: 5px;
+    background-color: #f04d24;
+    transition: transform 0.2s ease-in-out, background-color 0.5s ease-in-out;
+    border: none;
+}
+.book-card button:hover{
+    background-color: red;
+    color: #ecf0f1;
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+.book-card input[type="checkbox"]{
+    background-color: red;
+}
+#readStatus{
+    display: flex;
+    gap: 10px;
+}
+.book-read{
+    background-color: #27ae60;
+    transition: background-color 0.5s ease-in-out
+}
+
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    background-color: var(--secondary-color);
+    position: fixed;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+form h2{
+    color: var(--primary-color);
+    margin-top: 0;
+}
+label{
+    margin-top: 15px;
+}
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: 1.5px solid brown;
+}
+
+
+#haveRead{
+    display: flex;
+    gap: 10px;
+}
+form button {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+form button[type="submit"]{
+    background-color: #27ae60;
+}
+form button[type="button"] {
+    background-color: #e74c3c;
+}
+form button[type="submit"]:hover{
+    background-color: green;
+    color: #ecf0f1;
+}
+form button[type="button"]:hover {
+    background-color: #c0392b;
+    color: #ecf0f1;
+}
+
+
+
+footer{
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
